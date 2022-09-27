@@ -1,0 +1,64 @@
+.allCards{
+    width: 280px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.card{
+    width: 100%;
+    height: 130px;
+    display: flex;
+    align-items: center;
+}
+
+.card-icon{
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.card-icon img{
+    width: 30px;
+    height: 35px;
+}
+
+.calories{
+    background-color: rgba(255, 180, 180, 0.448);
+}
+
+.proteines{
+    background-color: #4AB8FF1A;
+}
+
+.glucides{
+    background-color: #ffcc0030;
+}
+
+.lipides{
+    background-color: #FD51811A;
+}
+
+.card-text{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    font-weight: 600;
+    color: #74798C;
+}
+
+.card-text p{
+    margin: 0px;
+}
+
+.mesure{
+    color: black;
+    font-size: 25px;
+    font-weight: 700;
+}
