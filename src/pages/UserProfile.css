@@ -1,10 +1,14 @@
-/* page entière */
-.userpage{
-    margin: 0;
-    padding: 0;
+* {
     width: 100%;
     height: 100%;
-    min-height: 720px;
+}
+
+/* whole page */
+.userpage{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 /* header */
@@ -13,59 +17,92 @@
     height: 100px;
 }
 
-/* tout ce qu'il y a en-dessous du header */
+/* everything below header */
+
 .userpage-content{
     width: 100%;
-    height: 90vh;
-    min-height: 720px;
+    height: -webkit-calc(100% - 100px);
+    height:    -moz-calc(100% - 100px);
+    height:         calc(100% - 100px);
     display: flex;
+    flex-direction: row;
 }
 
-.content-nav{
+/* vertical nav */
+
+.verticalNav{
     width: 6%;
     height: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: black;
 }
 
-.nav-waiter{
-    width: 100%;
+/* content part */
+
+.content-info{
+    width: 94%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: -60px;
+    position: relative;
 }
 
-.squareWait{
-    background-color: red;
-    width: 50px;
-    height: 50px;
-    margin: 20px;
-    border-radius: 10px;
-}
+/* hello USER ... */
 
-.nav-legal{
+.content-info-hello{
     width: 100%;
-    height: 20%;
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    transform: rotateZ(180deg);
+    height: 25%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-
+    flex-direction: column;
+    margin: 0;
 }
 
-.nav-legal p{
-    color: white;
-    font-size: 12px;
-    writing-mode: vertical-rl;
+.content-info-hello p{
+    padding-left: 100px;
+    width: fit-content;
+    height: fit-content;
+    margin: 0;
+    color: black;
 }
 
-/* partie avec les graphiques et les cartes */
+.hello{
+    padding-top: 60px;
+}
+
+.hello p{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.hello em{
+    color: red;
+    text-decoration: none;
+    font-style: normal;
+}
+
+.congrats{
+    margin-top: 0px;
+}
+
+.congrats p{
+    font-size: 17px;
+}
+
+/* stats (graphs etc...)*/
+
+.content-info-stats{
+    width: 100%;
+    height: 75%;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.info-graphs{
+    width: 80%;
+    height: 100%;
+}
+
+/* cards colories lipides glucides proteines */
+.info-macro{
+    width: 20%;
+    height: 100%;
+}
+/* part with charts and maps */

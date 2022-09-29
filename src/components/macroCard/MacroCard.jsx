@@ -1,16 +1,16 @@
 import './MacroCard.css';
 import PropTypes from 'prop-types';
-import burger from '../../assets/burger.png'
-import flamme from '../../assets/flamme.png'
-import pomme from '../../assets/pomme.png'
-import poulet from '../../assets/poulet.png'
+import burger from '../../assets/Lipides.svg'
+import flamme from '../../assets/Calories.svg'
+import pomme from '../../assets/Glucides.svg'
+import poulet from '../../assets/Proteines.svg'
 
 function MacroCard({calories, proteines, glucides, lipides}){
     return(
         <div className='allCards'>
             {/* carte calories*/}
             <div className='card'>
-                <div className='card-icon calories'>
+                <div className='card-icon'>
                     <img src={flamme} alt='flamme icon'/>
                 </div>
                 <div className='card-text'>
@@ -20,7 +20,7 @@ function MacroCard({calories, proteines, glucides, lipides}){
             </div>
             {/* carte Proteines*/}
             <div className='card'>
-                <div className='card-icon proteines'>
+                <div className='card-icon'>
                     <img src={poulet} alt='poulet icon'/>
                 </div>
                 <div className='card-text'>
@@ -30,7 +30,7 @@ function MacroCard({calories, proteines, glucides, lipides}){
             </div>
             {/* carte calories*/}
             <div className='card'>
-                <div className='card-icon glucides'>
+                <div className='card-icon'>
                     <img src={pomme} alt='pomme icon'/>
                 </div>
                 <div className='card-text'>
@@ -40,7 +40,7 @@ function MacroCard({calories, proteines, glucides, lipides}){
             </div>
             {/* carte calories*/}
             <div className='card'>
-                <div className='card-icon lipides'>
+                <div className='card-icon'>
                     <img src={burger} alt='burger icon'/>
                 </div>
                 <div className='card-text'>
