@@ -1,0 +1,8 @@
+.barGraph {
+  border: 5px solid blue;
+    width: fit-content;
+    height: fit-content;
+    font-family: sans-serif;
+    text-align: center;
+}
+  

@@ -10,3 +10,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
 }
+
+#root{
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}

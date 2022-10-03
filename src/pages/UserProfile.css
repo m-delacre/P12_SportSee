@@ -1,8 +1,3 @@
-* {
-    width: 100%;
-    height: 100%;
-}
-
 /* whole page */
 .userpage{
     width: 100%;
@@ -96,13 +91,55 @@
 }
 
 .info-graphs{
+    border: 2px solid red;
     width: 80%;
+    height: 100%;
+    padding-left:100px;
+}
+
+.graphs-top{
+    width: 100%;
+    height: 45%;
+    margin-bottom: 20px;
+}
+
+.graphs-bar{
+    border: 2px solid purple;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.graphs-bot{
+    border: 2px solid green;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.graphs-line{
+    border: 2px solid blue;
+    width: 100%;
+    height: 100%;
+}
+
+.graphs-radar{
+    border: 2px solid orange;
+    width: 100%;
+    height: 100%;
+}
+
+.graphs-radial{
+    border: 2px solid lawngreen;
+    width: 100%;
     height: 100%;
 }
 
 /* cards colories lipides glucides proteines */
 .info-macro{
+    margin-left: 40px;
     width: 20%;
     height: 100%;
 }
-/* part with charts and maps */
