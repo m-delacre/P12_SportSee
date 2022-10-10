@@ -2,11 +2,17 @@
 
 ## Getting Started
 
-After cloning this repo, you need to run ###`npm install`. 
+After cloning this repo, you need to run :
+
+###`npm install`
 
 This command will help you to install all dependecies you need in this project.
 
-Then you need to run ###`npm start`, and open the browser on the deployed port.
+Then you need to run :
+
+###`npm start`
+
+ and open the browser on the deployed port.
 
 ## Backend
 
@@ -19,6 +25,9 @@ Please follow all instuctions on the ReadMe file of this project if you want to 
 ## Technologies used for this project
 
 This project use : 
+
 JavaScript
+
 React
+
 HTML/CSS
