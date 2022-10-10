@@ -33,7 +33,7 @@
 /* content part */
 
 .content-info{
-    width: 94%;
+    width: 84%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -91,7 +91,6 @@
 }
 
 .info-graphs{
-    border: 2px solid red;
     width: 80%;
     height: 100%;
     padding-left:100px;
@@ -104,14 +103,12 @@
 }
 
 .graphs-bar{
-    border: 2px solid purple;
     width: 100%;
     height: 100%;
     position: relative;
 }
 
 .graphs-bot{
-    border: 2px solid green;
     width: 100%;
     height: 50%;
     display: flex;
@@ -120,26 +117,68 @@
 }
 
 .graphs-line{
-    border: 2px solid blue;
-    width: 100%;
+    width: 33%;
     height: 100%;
 }
 
 .graphs-radar{
-    border: 2px solid orange;
-    width: 100%;
+    width: 33%;
     height: 100%;
 }
 
 .graphs-radial{
-    border: 2px solid lawngreen;
-    width: 100%;
+    width: 33%;
     height: 100%;
 }
 
 /* cards colories lipides glucides proteines */
 .info-macro{
-    margin-left: 40px;
+    margin-left: 60px;
     width: 20%;
     height: 100%;
+}
+
+@media only screen and (max-width : 1450px){
+    .userpage-content{
+        width: 100%;
+        height: -webkit-calc(100% - 80px);
+        height:    -moz-calc(100% - 80px);
+        height:         calc(100% - 80px);
+        display: flex;
+        flex-direction: row;
+        margin-top: -20px;
+    }
+
+    .content-info-hello p{
+        padding-left: 30px;
+    }
+
+    .hello{
+        padding-top: 30px;
+    }
+
+    .info-graphs{
+        width: 90%;
+        padding-left:30px;
+    }
+
+    .graphs-line{
+        width: 30%;
+        height: 100%;
+    }
+    
+    .graphs-radar{
+        width: 39%;
+        height: 100%;
+    }
+    
+    .graphs-radial{
+        width: 30%;
+        height: 100%;
+    }
+
+    .info-macro{
+        width: 10%;
+        margin-left: 20px;
+    }
 }

@@ -53,3 +53,31 @@
     font-weight: 700;
     margin: 0;
 }
+
+@media only screen and (max-width : 1450px){
+    .allCards{
+        width: 180px;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .card-icon{
+        width: 70px;
+        height: 70px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .card-text{
+        font-size: 13px;
+    }
+
+    .mesure{
+        font-size: 15px;
+    }
+}

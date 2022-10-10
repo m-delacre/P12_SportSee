@@ -23,6 +23,11 @@
     height: fit-content;
 }
 
+.icon img{
+    width: 60px;
+    height: 60px;
+}
+
 .vNav-text{
     width: fit-content;
     height: 20%;
@@ -40,4 +45,11 @@
     color: white;
     font-size: 12px;
     writing-mode: vertical-rl;
+}
+
+@media only screen and (max-width : 1450px){
+    .icon img{
+        width: 35px;
+        height: 35px;
+    }
 }

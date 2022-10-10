@@ -5,6 +5,9 @@ import MacroCard from '../components/macroCard/MacroCard.jsx';
 import VerticalNav from '../components/verticalNav/VerticalNav';
 import callAPI from '../callapi.js';
 import BarGraph from '../components/barGraph/BarGraph.jsx';
+import RadarGraph from '../components/radarGraph/radarGraph';
+import RadialGraph from '../components/radialGraph/RadialGraph';
+import LineGraph from '../components/lineGraph/LineGraph';
 
 function UserProfile(){
     
@@ -42,6 +45,7 @@ function UserProfile(){
     const proteine = userData.keyData.proteinCount;
     const glucide = userData.keyData.carbohydrateCount;
     const lipide = userData.keyData.lipidCount;
+    const userScore = userData.todayScore;
 
 
     const sessionsList = userAverageSession.sessions;
@@ -74,12 +78,14 @@ function UserProfile(){
                             </div>
                             <div className='graphs-bot'>
                                 <div className='graphs-line'>
-
+                                    <LineGraph sessionsList={sessionsList}/>
                                 </div>
                                 <div className='graphs-radar'>
-
+                                    <RadarGraph performance={userPerformance}/>
                                 </div>
-                                <div className='graphs-radial'></div>
+                                <div className='graphs-radial'>
+                                    <RadialGraph userScore={userScore}/>
+                                </div>
                             </div>
                         </div>
                         <div className='info-macro'>
