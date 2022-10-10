@@ -4,13 +4,13 @@
 
 After cloning this repo, you need to run :
 
-###`npm install`
+### `npm install`
 
 This command will help you to install all dependecies you need in this project.
 
 Then you need to run :
 
-###`npm start`
+### `npm start`
 
  and open the browser on the deployed port.
 
