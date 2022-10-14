@@ -97,7 +97,6 @@ function UserProfile(){
                             />
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </div>

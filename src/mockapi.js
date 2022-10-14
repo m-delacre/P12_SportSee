@@ -1,5 +1,5 @@
 import localdata from './localdata.js';
-import Activity from './components/classes/activity.js';
+/*import Activity from './components/classes/activity.js';
 
 export default function getMockedActivity(id, setActivity) {
     let userId = parseInt(id);
@@ -9,3 +9,4 @@ export default function getMockedActivity(id, setActivity) {
         )
     );
 }
+*/

@@ -17,3 +17,21 @@
   left: 0;
   font-size: 10px;
 }
+
+.custom-tooltip-kgKcal{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  border: 0;
+  background-color: #E60000;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+}
+
+.custom-tooltip-kgKcal-text{
+  font-size: 15px;
+  color: white;
+  border: 0;
+}
