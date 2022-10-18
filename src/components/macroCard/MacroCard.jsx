@@ -5,6 +5,15 @@ import flamme from '../../assets/Calories.svg'
 import pomme from '../../assets/Glucides.svg'
 import poulet from '../../assets/Proteines.svg'
 
+/**
+ * Component for showing user macronutrient
+ * 
+ * @param {number} calories - user calories consumption
+ * @param {number} proteines - user proteines consumption
+ * @param {number} glucides - user glucides consumption
+ * @param {number} lipides - user lipides consumption
+ * @returns 4 cards with information for each nutrient
+ */
 function MacroCard({calories, proteines, glucides, lipides}){
     return(
         <div className='allCards'>
@@ -53,9 +62,24 @@ function MacroCard({calories, proteines, glucides, lipides}){
 }
 
 MacroCard.propTypes = {
+    /**
+     * user calories consumption 
+     */
     calories: PropTypes.number,
+
+    /**
+     * user proteines consumption
+     */
     proteines: PropTypes.number,
+
+    /**
+     * user glucides consumption
+     */
     glucides: PropTypes.number,
+
+    /**
+     * user lipides consumption
+     */
     lipides: PropTypes.number,
 }
 

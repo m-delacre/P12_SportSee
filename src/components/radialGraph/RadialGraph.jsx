@@ -3,9 +3,16 @@ import React from "react";
 import {ResponsiveContainer,RadialBarChart, RadialBar} from "recharts";
 import PropTypes from 'prop-types';
 
+/**
+ * Component for showing where the user is in their goals
+ * 
+ * @param {number} userScore - todayScore example : 0.12
+ * @returns a RadialBarChart component using recharts library 
+ */
 function RadialGraph({userScore}){
     let getScore = userScore
     let score = 0
+    //percentage converter
     getScore === 1 ? score = 100 : score = (getScore * 100).toFixed(0)
     const data = [
         {
@@ -52,6 +59,9 @@ function RadialGraph({userScore}){
 }
 
 RadialGraph.propTypes = {
+    /**
+     * user score
+     */
     userScore: PropTypes.number,
 }
 

@@ -1,6 +1,14 @@
 import PropTypes from 'prop-types';
 import './NavIcon.css';
 
+
+/**
+ * Component for showing activity icon in the vertical nav
+ * 
+ * @param {string} src - icon image 
+ * @param {string} descripition - icon image text for alt
+ * @returns  an icon component 
+ */
 function NavIcon({src, descripition}){
     return(
         <div className="navIcon">
@@ -10,7 +18,14 @@ function NavIcon({src, descripition}){
 }
 
 NavIcon.propTypes = {
+    /**
+     * icon image
+     */
     src: PropTypes.string,
+
+    /**
+     * icon image text for accessibility
+     */
     descripition: PropTypes.string,
 }
 

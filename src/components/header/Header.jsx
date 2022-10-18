@@ -1,6 +1,10 @@
 import logo from '../../assets/logo_sportsee.png';
 import './Header.css';
 
+/**
+ * 
+ * @returns returns header and navigation
+ */
 function Header(){
     return(
         <div className="header">

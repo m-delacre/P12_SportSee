@@ -3,9 +3,18 @@ import React from "react";
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from "recharts";
 import PropTypes from 'prop-types';
 
-
+/**
+ * Component for showing user weight and number of calories burned per session
+ * 
+ * @param {array} sessionsList - list of user sessions
+ * @param {array} activityList - list of user activities 
+ * @returns a BarChart component using recharts library 
+ */
 function BarGraph({sessionsList, activityList}) {
   const data = [];
+  /**
+   * create an array of object composed of the two arrays in parameter
+   */
   for(let i = 0; i < sessionsList.length; i++){
     let newData = {
       "day": sessionsList[i].day,
@@ -16,9 +25,15 @@ function BarGraph({sessionsList, activityList}) {
     data.push(newData);
   }
 
+  /**
+   * Custom tooltip
+   * 
+   * @param {boolean} active - If set true, the tooltip is displayed
+   * @param {array} payload - he source data of the content to be displayed in the tooltip
+   * @returns 
+   */
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
-      console.log(payload)
         return (
             <div className='custom-tooltip-kgKcal'>
                 <p className='custom-tooltip-kgKcal-text'>{payload[0].value} kg</p>
@@ -54,7 +69,14 @@ function BarGraph({sessionsList, activityList}) {
 }
 
 BarGraph.propTypes = {
+  /**
+   * user sessions
+   */
   sessionsList: PropTypes.array,
+
+  /**
+   * user activities
+   */
   activityList: PropTypes.array,
 }
 

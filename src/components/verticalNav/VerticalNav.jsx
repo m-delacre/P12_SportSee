@@ -5,6 +5,11 @@ import yoga from '../../assets/yoga.svg';
 import NavIcon from '../navIcon/NavIcon';
 import './VerticalNav.css';
 
+/**
+ * Component for showing a vertical navigation
+ * 
+ * @returns a component 
+ */
 function VerticalNav(){
     return(
         <div className='vNav'>

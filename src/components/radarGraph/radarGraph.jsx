@@ -3,11 +3,21 @@ import React from "react";
 import {ResponsiveContainer,Radar,RadarChart,PolarGrid,PolarAngleAxis} from "recharts";
 import PropTypes from 'prop-types';
 
+/**
+ * Component for showing user scores per activity
+ * 
+ * @param {array} performance - user scores per activity
+ * @returns a BarChart component using recharts library 
+ */
 function RadarGraph({performance}){
     const data = [];
+    /**
+     * create an array of object composed only of the data that we need from the array in parameter(performance)
+     */
     for(let i = 0; i < performance.data.length; i++){
-        let type = "";
-        switch (performance.kind[i+1]) {
+      //switch to translate the type of activity in French
+      let type = "";
+      switch (performance.kind[i+1]) {
             case "cardio":
               // Instructions à exécuter lorsque le résultat
               // de l'expression correspond à valeur1
@@ -41,13 +51,13 @@ function RadarGraph({performance}){
               // ne correspond
               type = "type";
               break;
+        }
+      let newData = 
+          {
+              type: type,
+              value: performance.data[i].value
           }
-        let newData = 
-            {
-                type: type,
-                value: performance.data[i].value
-            }
-        data.push(newData);
+      data.push(newData);
     }
     
     return(
@@ -77,6 +87,9 @@ function RadarGraph({performance}){
 }
 
 RadarGraph.propTypes = {
+    /**
+     * user activities
+     */
     performance: PropTypes.object,
 }
 

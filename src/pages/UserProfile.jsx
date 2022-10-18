@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../components/header/Header';
 import './UserProfile.css';
+import mockedData from '../mockapi';
 import MacroCard from '../components/macroCard/MacroCard.jsx';
 import VerticalNav from '../components/verticalNav/VerticalNav';
 import callAPI from '../callapi.js';
@@ -9,14 +10,40 @@ import RadarGraph from '../components/radarGraph/radarGraph';
 import RadialGraph from '../components/radialGraph/RadialGraph';
 import LineGraph from '../components/lineGraph/LineGraph';
 
+/**
+ * Component for showing a user's personal page
+ * 
+ * @returns a component with all the user info 
+ */
 function UserProfile(){
-    
-    const id = 12;
+
+    const id = 18;
     const [userData, setUserData] = useState();
     const [userActivity, setUserActivity] = useState();
     const [userPerformance, setUserPerformance] = useState();
     const [userAverageSession, setUserAverageSession] = useState();
+    
+    /**
+     * Use mocked data
+     */
+     useEffect(() => {
+        //user info
+        const dataUser = mockedData.getMockUserInfo(id)
+        setUserData(dataUser);
+        //user activity
+        const dataActivity = mockedData.getMockUserActivity(id)
+        setUserActivity(dataActivity);
+        //user perf
+        const dataPerformance = mockedData.getMockUserPerformance(id)
+        setUserPerformance(dataPerformance);
+        //user sessions
+        const dataSessions = mockedData.getMockUserAverageSession(id)
+        setUserAverageSession(dataSessions);
+    }, []);
 
+    /**
+     * fetch data from api
+     *
     useEffect(() => {
         const fetchData = async () => {
             //user info
@@ -33,21 +60,20 @@ function UserProfile(){
             setUserAverageSession(dataSessions);
         }
         fetchData().catch(console.error);
-    }, []);
+    }, []);*/
 
     if (userData === undefined || userActivity === undefined || userPerformance === undefined || userAverageSession === undefined) {
-        return null;
+        return (<p>API not working</p>);
     }
+    
 
-    //var user info
+    //user info variables
     const firstName = userData.userInfos.firstName;
     const calorie = userData.keyData.calorieCount;
     const proteine = userData.keyData.proteinCount;
     const glucide = userData.keyData.carbohydrateCount;
     const lipide = userData.keyData.lipidCount;
-    const userScore = userData.todayScore;
-
-
+    const userScore = userData.todayScore ;
     const sessionsList = userAverageSession.sessions;
     const activityList = userActivity.sessions;
 

@@ -2,6 +2,12 @@ import './LineGraph.css';
 import { ResponsiveContainer, LineChart, Line, XAxis, Tooltip } from "recharts";
 import PropTypes from 'prop-types';
 
+/**
+ * Component for showing user sessions and their duration
+ * 
+ * @param {array} sessionsList - list of user sessions
+ * @returns a LineChart component using recharts library 
+ */
 function LineGraph({sessionsList}){
     const days =["L","M","M","J","V","S","D"];
     const data = [];
@@ -19,9 +25,11 @@ function LineGraph({sessionsList}){
     };
 
     /**
+     * Custom tooltip
      * 
-     * 
-     * @returns custom tooltip or null if not active
+     * @param {boolean} active - If set true, the tooltip is displayed
+     * @param {array} payload - he source data of the content to be displayed in the tooltip
+     * @returns 
      */
     const CustomTooltip = ({ active, payload }) => {
         if (active && payload && payload.length) {
@@ -50,7 +58,7 @@ function LineGraph({sessionsList}){
                     bottom: 5
                 }}
                 >
-                    <XAxis dataKey="day" stroke="white"/>
+                    <XAxis dataKey="day" stroke="white" tickLine={false} axisLine={false}/>
                     <Tooltip offset={15} content={<CustomTooltip />} />
                     <Line
                         type="monotone"
@@ -66,6 +74,9 @@ function LineGraph({sessionsList}){
 }
 
 LineGraph.propTypes = {
+    /**
+     * user sessions
+     */
     sessionsList: PropTypes.array,
 }
 
