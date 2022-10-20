@@ -25,7 +25,7 @@ function UserProfile(){
     
     /**
      * Use mocked data
-     */
+     *
      useEffect(() => {
         //user info
         const dataUser = mockedData.getMockUserInfo(id)
@@ -39,11 +39,11 @@ function UserProfile(){
         //user sessions
         const dataSessions = mockedData.getMockUserAverageSession(id)
         setUserAverageSession(dataSessions);
-    }, []);
+    }, []);*/
 
     /**
      * fetch data from api
-     *
+     */
     useEffect(() => {
         const fetchData = async () => {
             //user info
@@ -60,10 +60,24 @@ function UserProfile(){
             setUserAverageSession(dataSessions);
         }
         fetchData().catch(console.error);
-    }, []);*/
+    }, []);
 
     if (userData === undefined || userActivity === undefined || userPerformance === undefined || userAverageSession === undefined) {
-        return (<p>API not working</p>);
+        return (
+            <div className="userpage">
+            <div className='userpage-header'>
+                <Header/>
+            </div>
+            <div className='userpage-content'>
+                <div className='verticalNav'>
+                   <VerticalNav/> 
+                </div>
+                <div className='content-info'>
+                    <p className='apinotworking'>Pas de réponse de l'API...</p>
+                </div>
+            </div>
+        </div>
+        );
     }
     
 

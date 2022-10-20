@@ -19,36 +19,24 @@ function RadarGraph({performance}){
       let type = "";
       switch (performance.kind[i+1]) {
             case "cardio":
-              // Instructions à exécuter lorsque le résultat
-              // de l'expression correspond à valeur1
               type ="Cardio";
               break;
             case "energy":
-              // Instructions à exécuter lorsque le résultat
-              // de l'expression correspond à valeur2
               type ="Energie";
               break;
             case "strength":
-              // Instructions à exécuter lorsque le résultat
-              // de l'expression correspond à valeur2
               type ="Force";
               break;
             case "endurance":
-              // Instructions à exécuter lorsque le résultat
-              // de l'expression correspond à valeur2
               type ="Endurance";
               break;
             case "speed":
-              // Instructions à exécuter lorsque le résultat
-              // de l'expression correspond à valeur2
               type ="Vitesse";
               break;
             case "intensity":
                 type="Intensité"
                 break;
             default:
-              // Instructions à exécuter lorsqu'aucune des valeurs
-              // ne correspond
               type = "type";
               break;
         }
