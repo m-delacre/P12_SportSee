@@ -5,24 +5,11 @@ import PropTypes from 'prop-types';
 /**
  * Component for showing user sessions and their duration
  * 
- * @param {array} sessionsList - list of user sessions
+ * @param {array} data - formated list of user sessions
+ * 
  * @returns a LineChart component using recharts library 
  */
-function LineGraph({sessionsList}){
-    const days =["L","M","M","J","V","S","D"];
-    const data = [];
-
-    /**
-     * build an array of object with session duration per day
-     */
-    for(let i = 0; i < days.length; i++){
-        let newData = 
-            {
-                day: days[i],
-                sessionDuration: sessionsList[i].sessionLength
-            }
-        data.push(newData);
-    };
+function LineGraph({data}){
 
     /**
      * Custom tooltip
@@ -77,7 +64,7 @@ LineGraph.propTypes = {
     /**
      * user sessions
      */
-    sessionsList: PropTypes.array,
+    data: PropTypes.array,
 }
 
 export default LineGraph;

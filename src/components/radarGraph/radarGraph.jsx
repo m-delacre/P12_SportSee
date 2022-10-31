@@ -6,48 +6,10 @@ import PropTypes from 'prop-types';
 /**
  * Component for showing user scores per activity
  * 
- * @param {array} performance - user scores per activity
+ * @param {array} data - user scores per activity
  * @returns a BarChart component using recharts library 
  */
-function RadarGraph({performance}){
-    const data = [];
-    /**
-     * create an array of object composed only of the data that we need from the array in parameter(performance)
-     */
-    for(let i = 0; i < performance.data.length; i++){
-      //switch to translate the type of activity in French
-      let type = "";
-      switch (performance.kind[i+1]) {
-            case "cardio":
-              type ="Cardio";
-              break;
-            case "energy":
-              type ="Energie";
-              break;
-            case "strength":
-              type ="Force";
-              break;
-            case "endurance":
-              type ="Endurance";
-              break;
-            case "speed":
-              type ="Vitesse";
-              break;
-            case "intensity":
-                type="Intensité"
-                break;
-            default:
-              type = "type";
-              break;
-        }
-      let newData = 
-          {
-              type: type,
-              value: performance.data[i].value
-          }
-      data.push(newData);
-    }
-    
+function RadarGraph({data}){   
     return(
         <div className='radarGraph'>
             <ResponsiveContainer width="100%" height="100%">
@@ -78,7 +40,7 @@ RadarGraph.propTypes = {
     /**
      * user activities
      */
-    performance: PropTypes.object,
+    data: PropTypes.array,
 }
 
 export default RadarGraph;

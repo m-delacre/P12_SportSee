@@ -24,6 +24,7 @@ function RadialGraph({userScore}){
           fill: "#E60000"
         }
     ]
+    
     return(
         <div className='radialGraph'>
             <p className='score'>Score</p>

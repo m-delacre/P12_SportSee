@@ -1,5 +1,6 @@
 import logo from '../../assets/logo_sportsee.png';
 import './Header.css';
+import { Link } from 'react-router-dom';
 
 /**
  * 
@@ -8,9 +9,14 @@ import './Header.css';
 function Header(){
     return(
         <div className="header">
-            <img src={logo} alt="sportsee logo"/>
+            <Link to="/">
+                <img src={logo} alt="sportsee logo"/>
+            </Link>
+            
             <div className='header-nav'>
-                <p>Accueil</p>
+                <Link to="/">
+                    <p>Accueil</p>
+                </Link>
                 <p>Profil</p>
                 <p>Réglage</p>
                 <p>Communauté</p>

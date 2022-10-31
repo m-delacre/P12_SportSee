@@ -6,25 +6,11 @@ import PropTypes from 'prop-types';
 /**
  * Component for showing user weight and number of calories burned per session
  * 
- * @param {array} sessionsList - list of user sessions
- * @param {array} activityList - list of user activities 
+ * @param {array} data - formated list of user sessions and activities
+ * 
  * @returns a BarChart component using recharts library 
  */
-function BarGraph({sessionsList, activityList}) {
-  const data = [];
-  /**
-   * create an array of object composed of the two arrays in parameter
-   */
-  for(let i = 0; i < sessionsList.length; i++){
-    let newData = {
-      "day": sessionsList[i].day,
-      "poids": activityList[i].kilogram,
-      "calories": activityList[i].calories,
-      "sessionDuration": sessionsList[i].sessionLength,
-    }
-    data.push(newData);
-  }
-
+function BarGraph({data}) {
   /**
    * Custom tooltip
    * 
@@ -72,12 +58,7 @@ BarGraph.propTypes = {
   /**
    * user sessions
    */
-  sessionsList: PropTypes.array,
-
-  /**
-   * user activities
-   */
-  activityList: PropTypes.array,
+  data: PropTypes.array,
 }
 
 export default BarGraph;

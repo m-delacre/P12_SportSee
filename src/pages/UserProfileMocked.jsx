@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../components/header/Header';
 import './UserProfile.css';
+import mockedData from '../mockapi';
 import MacroCard from '../components/macroCard/MacroCard.jsx';
 import VerticalNav from '../components/verticalNav/VerticalNav';
-import callAPI from '../callapi.js';
 import BarGraph from '../components/barGraph/BarGraph.jsx';
 import RadarGraph from '../components/radarGraph/radarGraph';
 import RadialGraph from '../components/radialGraph/RadialGraph';
@@ -16,9 +16,9 @@ import DataFormat from '../data/dataFormat';
  * 
  * @returns a component with all the user info 
  */
-function UserProfile(){
-    const {userid} = useParams();
-    const id = userid;
+function UserProfileMocked(){
+    const {mockuserid} = useParams();
+    const id = parseInt(mockuserid);
     const [userData, setUserData] = useState();
     const [userActivity, setUserActivity] = useState();
     const [userPerformance, setUserPerformance] = useState();
@@ -26,7 +26,7 @@ function UserProfile(){
     
     /**
      * Use mocked data
-     *
+     */
      useEffect(() => {
         //user info
         const dataUser = mockedData.getMockUserInfo(id)
@@ -40,27 +40,6 @@ function UserProfile(){
         //user sessions
         const dataSessions = mockedData.getMockUserAverageSession(id)
         setUserAverageSession(dataSessions);
-    }, []);*/
-
-    /**
-     * fetch data from api
-     */
-    useEffect(() => {
-        const fetchData = async () => {
-            //user info
-            const dataUser = await callAPI.getUserInfo(id)
-            setUserData(dataUser);
-            //user activity
-            const dataActivity = await callAPI.getUserActivity(id)
-            setUserActivity(dataActivity);
-            //user perf
-            const dataPerformance = await callAPI.getUserPerformance(id)
-            setUserPerformance(dataPerformance);
-            //user sessions
-            const dataSessions = await callAPI.getUserAverageSession(id)
-            setUserAverageSession(dataSessions);
-        }
-        fetchData().catch(console.error);
     }, []);
 
     if (userData === undefined || userActivity === undefined || userPerformance === undefined || userAverageSession === undefined) {
@@ -144,4 +123,4 @@ function UserProfile(){
     )
 }
 
-export default UserProfile;
+export default UserProfileMocked;
