@@ -23,24 +23,6 @@ function UserProfile(){
     const [userActivity, setUserActivity] = useState();
     const [userPerformance, setUserPerformance] = useState();
     const [userAverageSession, setUserAverageSession] = useState();
-    
-    /**
-     * Use mocked data
-     *
-     useEffect(() => {
-        //user info
-        const dataUser = mockedData.getMockUserInfo(id)
-        setUserData(dataUser);
-        //user activity
-        const dataActivity = mockedData.getMockUserActivity(id)
-        setUserActivity(dataActivity);
-        //user perf
-        const dataPerformance = mockedData.getMockUserPerformance(id)
-        setUserPerformance(dataPerformance);
-        //user sessions
-        const dataSessions = mockedData.getMockUserAverageSession(id)
-        setUserAverageSession(dataSessions);
-    }, []);*/
 
     /**
      * fetch data from api
